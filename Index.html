@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In 20 số nguyên tó đầu tiên</title>
+</head>
+<body>
+<p align="center" id="out"></p>
+<script>
+    let number = Number(prompt("Nhập số nguyên tố cần in ra?",));
+    let count = 0;
+    let i = 0;
+    let writer = "";
+    while (count < number) {
+        if (isNguyenTo(i)) {
+            count += 1;
+            writer = writer + "<br>" + "+ Số nguyên tố thứ " + count + " là " + i
+        }
+        i += 1;
+    }
+    document.getElementById("out").innerHTML = writer;
+
+    function isNguyenTo(a) {
+        if (a < 2) {
+            return false;
+        }
+        if (a === 2) {
+            return true;
+        }
+        for (let i = 2; i < a; i++) {
+            if ((a % i) === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
